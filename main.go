@@ -20,7 +20,7 @@ func main() {
 		if path != "" {
 			return c.SendString(fmt.Sprintf("Hello, %s!", path))
 		}
-		return c.SendString("Hello World this is awesome!")
+		return c.SendString("Hello World Openshift!")
 	})
 
 	if err := app.Listen(":" + port); err != nil {
