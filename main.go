@@ -15,7 +15,6 @@ import (
 	"github.com/prometheus/client_golang/prometheus/promhttp"
 )
 
-// Confinement pattern using goroutine-owned state
 type request struct {
 	data   string
 	result chan string
@@ -101,7 +100,6 @@ func main() {
 		return c.SendString("Rate limited endpoint accessed")
 	})
 
-	// Concurrent GET using channel
 	app.Get("/status", func(c *fiber.Ctx) error {
 		statusCh := make(chan string)
 		go func() {
@@ -112,7 +110,6 @@ func main() {
 		return c.SendString("System status: " + status)
 	})
 
-	// POST handler using worker pool and WaitGroup
 	app.Post("/process", func(c *fiber.Ctx) error {
 		var payload []string
 		if err := c.BodyParser(&payload); err != nil {
