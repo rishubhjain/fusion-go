@@ -2,9 +2,6 @@ module fusion-go
 
 go 1.23
 
-toolchain go1.24.3
-
-//toolchain go1.24.3
 
 require (
 	github.com/gofiber/adaptor/v2 v2.2.1
