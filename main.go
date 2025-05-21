@@ -28,7 +28,7 @@ func main() {
 		if path != "" {
 			return c.SendString(fmt.Sprintf("Hello, %s!", path))
 		}
-		return c.SendString("Hello World Openshift!")
+		return c.SendString("Hello World Openshift! Rishoobh")
 	})
 
 	// Liveness probe
